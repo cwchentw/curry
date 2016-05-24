@@ -59,6 +59,8 @@ Later, query the amount to your base currency:
 $ curry from JPY 1000
 ```
 
+You may view the usage of this app with `go doc curry`.
+
 
 ## Copyright
 
