@@ -8,6 +8,15 @@ curry is a command line tool for querying currency rates, which are provided by 
 Like OpenExchangeRates service, exchange rates are provided for informational purposes only and do not constitute financial advice of any kind. Although every attempt is made to ensure quality, no guarantees are made of accuracy, validity, availability, or fitness for any purpose.
 
 
+## Install
+
+```
+$ go get -u github.com/cwchentw/curry
+```
+
+This app is developed with Go version 1.6 and tested on both GNU/Linux and Mac.
+
+
 ## Usage
 
 You need an app id from OpenExchangeRates to use this application. They provide a free plan with 1,000 queries per month, or buy an enhanced plan for more advanced features.
