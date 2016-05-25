@@ -7,8 +7,14 @@ import (
 	"os"
 )
 
+const VERSION = "1.0.0"
+
 func usage(cmd string) {
 	fmt.Println("Usage: " + cmd + " <command> [<args>]")
+	fmt.Println()
+	fmt.Println("-h, --help     Show this message")
+	fmt.Println("-v, --version  Show version number")
+	fmt.Println()
 	fmt.Println("Available commands:")
 	fmt.Println("  init      Initialize setttings")
 	fmt.Println("  update    Update data")
@@ -35,6 +41,16 @@ func main() {
 	favorFlag := false
 	fromToFlag := false
 	switch os.Args[1] {
+	case "-h":
+		fallthrough
+	case "--help":
+		usage(os.Args[0])
+		os.Exit(0)
+	case "-v":
+		fallthrough
+	case "--version":
+		fmt.Println(VERSION)
+		os.Exit(0)
 	case "init":
 		initFlag = true
 	case "update":
