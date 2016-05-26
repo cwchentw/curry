@@ -62,6 +62,11 @@ $ curry from JPY 1000
 You may view the usage of this app with `go doc curry`.
 
 
+## Note
+
+The test suite is written in [bats](https://github.com/sstephenson/bats).  *Caution.*  These tests will unconditionally set your base currency to TWD.
+
+
 ## Copyright
 
 Copyright 2016 Michael Chen. All rights reserved.
