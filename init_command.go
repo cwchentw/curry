@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"errors"
-	"github.com/cwchentw/libcurry"
 	"fmt"
+	"github.com/cwchentw/libcurry"
 	"os"
 )
 

@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"github.com/cwchentw/libcurry"
 	"log"
-	"os"
 	"strconv"
-	"time"
 )
 
 func ParseFromCmd(args []string) error {
@@ -40,20 +38,13 @@ func fromToBase(cur string, amountStr string) error {
 }
 
 func fromTo(cur1 string, cur2 string, amountStr string) error {
+	isOld, err := libcurry.IsDataOld()
+	if err != nil {
+		return err
+	}
+
 	// Update data if modification time > 24 hours
-	ratesPath, err := libcurry.GetCurrencyRatesPath()
-	if err != nil {
-		return err
-	}
-
-	info, err := os.Stat(ratesPath)
-	if err != nil {
-		return err
-	}
-
-	modTime := info.ModTime()
-	delta := time.Now().Sub(modTime)
-	if delta.Hours() > 24 {
+	if isOld {
 		err := UpdateData()
 		if err != nil {
 			log.Println("Data older than 24 hours")
