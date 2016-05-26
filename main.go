@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/cwchentw/libcurry"
 	"log"
 	"os"
 )
@@ -68,28 +67,28 @@ func main() {
 	}
 
 	if initFlag {
-		err := libcurry.InitSetting()
+		err := InitSetting()
 		if err != nil {
 			log.Fatalln(err)
 		}
 	}
 
 	if updateFlag {
-		err := libcurry.UpdateData()
+		err := UpdateData()
 		if err != nil {
 			log.Fatalln(err)
 		}
 	}
 
 	if listFlag {
-		err := libcurry.ListCurrencies()
+		err := ListCurrencies()
 		if err != nil {
 			log.Fatalln(err)
 		}
 	}
 
 	if clearFlag {
-		err := libcurry.Clear()
+		err := Clear()
 		if err != nil {
 			log.Fatalln(err)
 		}
@@ -100,14 +99,14 @@ func main() {
 			log.Fatalln("Wrong parameters")
 		}
 
-		err := libcurry.SetFavor(os.Args[2])
+		err := SetFavor(os.Args[2])
 		if err != nil {
 			log.Fatalln(err)
 		}
 	}
 
 	if fromToFlag {
-		err := libcurry.ParseFromCmd(os.Args)
+		err := ParseFromCmd(os.Args)
 		if err != nil {
 			log.Fatalln(err)
 		}
